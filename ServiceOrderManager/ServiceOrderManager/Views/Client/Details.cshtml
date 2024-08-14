@@ -1,0 +1,36 @@
+﻿@model ServiceOrderManager.Models.Client
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Client</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.clientCNPJ)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.clientCNPJ)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.enderecoCliente)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.enderecoCliente)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.telefone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.telefone)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

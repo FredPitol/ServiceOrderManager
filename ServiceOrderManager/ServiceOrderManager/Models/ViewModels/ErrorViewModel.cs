@@ -1,6 +1,6 @@
 using System;
 
-namespace ServiceOrderManager.Models
+namespace ServiceOrderManager.Models.ViewModels
 {
     public class ErrorViewModel
     {
