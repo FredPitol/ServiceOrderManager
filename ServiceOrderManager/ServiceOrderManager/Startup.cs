@@ -22,8 +22,9 @@ namespace ServiceOrderManager
         }
 
         public IConfiguration Configuration { get; }
-
+        
         // This method gets called by the runtime. Use this method to add services to the container.
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<CookiePolicyOptions>(options =>
@@ -37,7 +38,8 @@ namespace ServiceOrderManager
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<ServiceOrderManagerContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("ServiceOrderManagerContext")));
+                    options.UseMySql(Configuration.GetConnectionString("ServiceOrderManagerContext"), 
+                        builder => builder.MigrationsAssembly("ServiceOrderManager")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
